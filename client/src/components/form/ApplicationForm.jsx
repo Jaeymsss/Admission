@@ -170,11 +170,11 @@ const ApplicationForm = () => {
             setInputData({ ...inputData, [name]: '' });
         } else if (name === 'email') {
             setInputData({ ...inputData, [name]: value });
-        } else if (name === 'lrn' && (/[^0-9]/.test(value) || value.length > 13)) {
+        } else if (name === 'lrn' && (/[^0-9]/.test(value) || value.length > 12)) {
             Swal.fire({
                 icon: 'error',
                 title: 'Invalid LRN',
-                text: 'LRN should be a numeric value and exactly 13 digits.',
+                text: 'LRN should be a numeric value and exactly 12 digits.',
                 confirmButtonColor: '#22C55E',
             });
             setInputData({ ...inputData, [name]: '' });
@@ -191,6 +191,22 @@ const ApplicationForm = () => {
                 icon: 'error',
                 title: 'Invalid Date of Birth',
                 text: 'Year must be 1980 or later.',
+                confirmButtonColor: '#22C55E',
+            });
+            setInputData({ ...inputData, [name]: '' });
+        } else if (name === 'religion' && /[^a-zA-Z\s]/.test(value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Input',
+                text: 'Please enter only letters for Religion.',
+                confirmButtonColor: '#22C55E',
+            });
+            setInputData({ ...inputData, [name]: '' });
+        } else if (name === 'zipCode' && (/[^0-9]/.test(value) || value.length > 4)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Zip Code',
+                text: 'Zip code should be a numeric value and exactly 4 digits.',
                 confirmButtonColor: '#22C55E',
             });
             setInputData({ ...inputData, [name]: '' });
