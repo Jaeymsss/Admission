@@ -760,12 +760,12 @@ const ApplicationForm = () => {
                             <input className='w-full p-4 pr-4 text-sm text-black rounded-md border-2 border-solid border-gray-200 outline-none bg-[#EBEBEB] placeholder-gray-500' type="text" placeholder='Do not leave it blank.' name='school' value={school} onChange={handleChange}/>
 
 
-                            <p className='mt-6 text-base font-normal text-center max-sm:text-xs'>Address of the School of the Lower Prmary Education Attended</p>
+                            <p className='mt-6 text-base font-normal text-center max-sm:text-xs'>Address of the School of the Lower Primary Education Attended</p>
                             <span className='label-text text-black font-bold select-none mt-3'>*</span>
                             <input className='w-full p-4 pr-4 text-sm text-black rounded-md border-2 border-solid border-gray-200 outline-none bg-[#EBEBEB] placeholder-gray-500' type="text" placeholder='Do not leave it blank.' name='schoolAddress' value={schoolAddress} onChange={handleChange}/>
 
 
-                            <p className='mt-6 text-base font-normal text-center max-sm:text-xs'>Grade Level</p>
+                            <p className='mt-6 text-base font-normal text-center max-sm:text-xs'>Grade Level for the upcoming Upper Primary Education</p>
                             <span className='label-text text-black font-bold select-none mt-3'>*</span>
                             <select name="course" onChange={handleChange} className='w-full p-4 text-sm text-black rounded-md border-2 border-solid border-gray-200 outline-none bg-[#EBEBEB] placeholder-gray-500'>
                                 <option selected disabled>Choose a grade level</option>
