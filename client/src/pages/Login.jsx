@@ -131,6 +131,7 @@ const Login = () => {
                             </button>
                         </div>
                     </div>
+                    {/*Forgot password */}
                     {/* <div>
                         <Link to='/' className='text-sm text-black border-none float-end capitalize max-sm:text-xs'>Forgot password?</Link>
                     </div> */}
