@@ -135,6 +135,8 @@ const TransfereeForm = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const capitalizedValue = capitalizeFirstLetter(value);
+        const currentYear = new Date().getFullYear();
+        const inputYear = new Date(value).getFullYear();
         if (/^\s/.test(value)) {
             Swal.fire({
                 icon: 'error',
@@ -172,6 +174,22 @@ const TransfereeForm = () => {
                 icon: 'error',
                 title: 'Invalid Date of Birth',
                 text: 'Date of Birth cannot be today or a future date.',
+                confirmButtonColor: '#22C55E',
+            });
+            setInputData({ ...inputData, [name]: '' });
+        } else if (name === 'dob' && (inputYear >= currentYear)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Date of Birth',
+                text: 'Date of Birth cannot be this year or a future year.',
+                confirmButtonColor: '#22C55E',
+            });
+            setInputData({ ...inputData, [name]: '' });
+        } else if (name === 'dob' && inputYear < 1980) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Date of Birth',
+                text: 'Year must be 1980 or later.',
                 confirmButtonColor: '#22C55E',
             });
             setInputData({ ...inputData, [name]: '' });
